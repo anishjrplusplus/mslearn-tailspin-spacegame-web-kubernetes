@@ -45,11 +45,11 @@ stages:
   displayName: 'Deploy the container'
   dependsOn: Build
   jobs:
-  - job: 'Deploy'
-    displayName: 'Deploy job'
+  - deployment: Deploy
+    displayName: Deploy
     pool:
       vmImage: 'ubuntu-18.04'
-      environment: 'spike.default'
+    environment: 'spike.default'
     variables:
     - group: Release
     strategy:
